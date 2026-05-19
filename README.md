@@ -22,8 +22,19 @@ logic bugs, numerical stability issues, performance traps, and reproducibility g
 # Install dependencies
 pip install -r requirements.txt
 
-# Run all task verifications
+# Run all task verifications (Linux / Git Bash / WSL)
 bash verify/verify_all.sh
+
+# Confirm buggy environments are detectably broken
+python verify/test_buggy_envs.py
+```
+
+```powershell
+# Windows PowerShell
+pip install -r requirements.txt
+
+# Run all task verifications
+.\verify\verify_all.ps1
 
 # Confirm buggy environments are detectably broken
 python verify/test_buggy_envs.py
@@ -40,7 +51,14 @@ python verify/test_buggy_envs.py
 |   |       +-- fixed_env.py            # Corrected environment
 |   |       +-- train.py                # Minimal PPO training
 |   |       +-- tests/test_env.py       # Black-box pytest suite
-|   |       +-- solve.sh                # One-shot verification
+|   |       +-- solve.sh / solve.ps1    # One-shot verification (bash & PowerShell)
+|   |   +-- README.md                   # Task description (English)
+|   +-- 02_job_scheduling/              # Same structure
+|   +-- 03_ad_bidding/                  # Same structure
+|   +-- 04_cache_policy/                # Same structure
++-- verify/
+|   +-- verify_all.sh / verify_all.ps1  # Sequential verification runner
+|   |   +-- README.md                   # Task description (English)
 |   |   +-- README.md                   # Task description (English)
 |   +-- 02_job_scheduling/              # Same structure
 |   +-- 03_ad_bidding/                  # Same structure
@@ -80,6 +98,16 @@ A capable LLM should be able to:
 - **Containerisation**: Docker (python:3.10-slim)
 
 ## Verification
+
+```bash
+# Linux / Git Bash / WSL
+bash verify/verify_all.sh
+```
+
+```powershell
+# Windows PowerShell
+.\verify\verify_all.ps1
+```
 
 ```bash
 # Full pipeline via Docker
