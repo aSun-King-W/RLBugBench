@@ -2,15 +2,15 @@
 
 ## 1. 总体路线图
 
-项目分为 6 个阶段推进，总计预计约 2-3 周（视实际编码进度而定）。
+项目分为 6 个阶段推进。
 
 ```
-Phase 1: 项目骨架搭建       → Day 1
-Phase 2: Task 1 库存管理     → Day 2-3
-Phase 3: Task 2 作业调度     → Day 4-6
-Phase 4: Task 3 广告竞价     → Day 7-10
-Phase 5: Task 4 缓存策略     → Day 11-14
-Phase 6: 集成测试与文档完善  → Day 15-16
+Phase 1: 项目骨架搭建     
+Phase 2: Task 1 库存管理     
+Phase 3: Task 2 作业调度    
+Phase 4: Task 3 广告竞价     
+Phase 5: Task 4 缓存策略    
+Phase 6: 集成测试与文档完善 
 ```
 
 ---
@@ -21,12 +21,12 @@ Phase 6: 集成测试与文档完善  → Day 15-16
 建立项目目录结构、Docker 环境和公共配置，确保后续任务可以在统一的环境中开发测试。
 
 ### 具体任务
-- [ ] 创建完整目录树（tasks/01~04、verify/）
-- [ ] 编写 Dockerfile（基于 python:3.10-slim）
-- [ ] 编写 docker-compose.yml
-- [ ] 编写 requirements.txt（锁定 gymnasium, numpy, torch, stable-baselines3 等版本）
-- [ ] 编写 verify/verify_all.sh（串行执行所有任务的 solve.sh）
-- [ ] 编写 .gitignore
+- [x] 创建完整目录树（tasks/01~04、verify/）
+- [x] 编写 Dockerfile（基于 python:3.10-slim）
+- [x] 编写 docker-compose.yml
+- [x] 编写 requirements.txt（锁定 gymnasium, numpy, torch, stable-baselines3 等版本）
+- [x] 编写 verify/verify_all.sh（串行执行所有任务的 solve.sh）
+- [x] 编写 .gitignore
 
 ### 关键输出
 - Dockerfile + docker-compose.yml：`docker compose up` 即可进入开发环境
@@ -46,12 +46,12 @@ docker compose run --rm app python -c "import gymnasium; print(gymnasium.__versi
 实现最简单的梯度任务，快速验证完整 pipeline（问题代码 → 修复 → 测试 → 验证）。
 
 ### 具体任务
-- [ ] 编写 `tasks/01_inventory_management/environment/env.py`（含 3 个缺陷的 Gymnasium 环境）
-- [ ] 编写 `tasks/01_inventory_management/solution/fixed_env.py`（修复后的环境）
-- [ ] 编写 `tasks/01_inventory_management/solution/train.py`（基于 PPO 的最短训练流程）
-- [ ] 编写 `tasks/01_inventory_management/solution/tests/test_env.py`（黑盒测试）
-- [ ] 编写 `tasks/01_inventory_management/solution/solve.sh`（一键验证脚本）
-- [ ] 编写 `tasks/01_inventory_management/README.md`（纯英文任务描述）
+- [x] 编写 `tasks/01_inventory_management/environment/env.py`（含 3 个缺陷的 Gymnasium 环境）
+- [x] 编写 `tasks/01_inventory_management/solution/fixed_env.py`（修复后的环境）
+- [x] 编写 `tasks/01_inventory_management/solution/train.py`（基于 PPO 的最短训练流程）
+- [x] 编写 `tasks/01_inventory_management/solution/tests/test_env.py`（黑盒测试）
+- [x] 编写 `tasks/01_inventory_management/solution/solve.sh`（一键验证脚本）
+- [x] 编写 `tasks/01_inventory_management/README.md`（纯英文任务描述）
 
 ### 缺陷清单
 | 缺陷 | 定位 | 修复方式 |
@@ -73,12 +73,12 @@ cd tasks/01_inventory_management && bash solution/solve.sh
 实现中等难度的调度任务，引入动作屏蔽和数值稳定性方面的缺陷。
 
 ### 具体任务
-- [ ] 编写 `tasks/02_job_scheduling/environment/env.py`（含 3 个缺陷）
-- [ ] 编写 `tasks/02_job_scheduling/solution/fixed_env.py`
-- [ ] 编写 `tasks/02_job_scheduling/solution/train.py`
-- [ ] 编写 `tasks/02_job_scheduling/solution/tests/test_env.py`
-- [ ] 编写 `tasks/02_job_scheduling/solution/solve.sh`
-- [ ] 编写 `tasks/02_job_scheduling/README.md`
+- [x] 编写 `tasks/02_job_scheduling/environment/env.py`（含 3 个缺陷）
+- [x] 编写 `tasks/02_job_scheduling/solution/fixed_env.py`
+- [x] 编写 `tasks/02_job_scheduling/solution/train.py`
+- [x] 编写 `tasks/02_job_scheduling/solution/tests/test_env.py`
+- [x] 编写 `tasks/02_job_scheduling/solution/solve.sh`
+- [x] 编写 `tasks/02_job_scheduling/README.md`
 
 ### 缺陷清单
 | 缺陷 | 定位 | 修复方式 |
@@ -141,12 +141,35 @@ cd tasks/01_inventory_management && bash solution/solve.sh
 全量验证所有任务，完善英文文档和项目级文档。
 
 ### 具体任务
-- [ ] 运行 `verify/verify_all.sh` 全量验证
-- [ ] 确认每个任务的 buggy 环境在测试中确实失败
-- [ ] 确认每个任务的 fixed 环境在测试中全部通过
-- [ ] 完善 `TASK.md` 纯英文总任务描述
-- [ ] 完善 `execution_plan.md` 中文执行计划
-- [ ] 最终 README.md 项目说明
+- [x] 运行 `verify/verify_all.sh` 全量验证
+- [x] 确认每个任务的 buggy 环境在测试中确实失败（`python verify/test_buggy_envs.py`，14/14 bugs detected）
+- [x] 确认每个任务的 fixed 环境在测试中全部通过（每个任务 13-18 个 pytest，全部通过）
+- [x] 完善 `TASK.md` 纯英文总任务描述
+- [x] 完善 `execution_plan.md` 中文执行计划
+- [x] 最终 README.md 项目说明
+
+### 验证结果
+
+```bash
+# Fixed env tests — all pass
+# Task 1: 13/13 passed
+# Task 2: 18/18 passed
+# Task 3: 17/17 passed
+# Task 4: 17/17 passed
+
+# Buggy env detection — all bugs confirmed
+# Task 1: 3/3 bugs detected
+# Task 2: 4/4 bugs detected
+# Task 3: 3/3 bugs detected
+# Task 4: 4/4 bugs detected
+# Total: 14/14 bugs confirmed
+
+# Training — all tasks improve over random baseline
+# Task 1 (Inventory):   +8781.28 improvement  PASSED
+# Task 2 (Job Shop):    +14.75  improvement  PASSED
+# Task 3 (Ad Bidding):  +87.28  improvement  PASSED
+# Task 4 (Cache):       +0.036  improvement  PASSED
+```
 
 ### 全量验证
 ```bash

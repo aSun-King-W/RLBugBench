@@ -33,6 +33,12 @@ logs/
 runs/
 tensorboard/
 
+# Images (task screenshots, etc.)
+*.png
+*.jpg
+*.jpeg
+*.gif
+
 # Environment
 .env
 *.local
