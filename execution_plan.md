@@ -95,12 +95,12 @@ cd tasks/01_inventory_management && bash solution/solve.sh
 实现中等偏高难度的预算分配任务，引入预算约束、状态设计和非平稳性等方面的缺陷。
 
 ### 具体任务
-- [ ] 编写 `tasks/03_ad_bidding/environment/env.py`（含 4 个缺陷）
-- [ ] 编写 `tasks/03_ad_bidding/solution/fixed_env.py`
-- [ ] 编写 `tasks/03_ad_bidding/solution/train.py`
-- [ ] 编写 `tasks/03_ad_bidding/solution/tests/test_env.py`
-- [ ] 编写 `tasks/03_ad_bidding/solution/solve.sh`
-- [ ] 编写 `tasks/03_ad_bidding/README.md`
+- [x] 编写 `tasks/03_ad_bidding/environment/env.py`（含 4 个缺陷）
+- [x] 编写 `tasks/03_ad_bidding/solution/fixed_env.py`
+- [x] 编写 `tasks/03_ad_bidding/solution/train.py`
+- [x] 编写 `tasks/03_ad_bidding/solution/tests/test_env.py`
+- [x] 编写 `tasks/03_ad_bidding/solution/solve.sh`
+- [x] 编写 `tasks/03_ad_bidding/README.md`
 
 ### 缺陷清单
 | 缺陷 | 定位 | 修复方式 |
