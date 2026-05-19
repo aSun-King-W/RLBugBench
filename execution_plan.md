@@ -118,12 +118,12 @@ cd tasks/01_inventory_management && bash solution/solve.sh
 实现最高难度的 CDN 缓存策略任务，缺陷最隐蔽、涉及面最广。
 
 ### 具体任务
-- [ ] 编写 `tasks/04_cache_policy/environment/env.py`（含 4 个缺陷）
-- [ ] 编写 `tasks/04_cache_policy/solution/fixed_env.py`
-- [ ] 编写 `tasks/04_cache_policy/solution/train.py`
-- [ ] 编写 `tasks/04_cache_policy/solution/tests/test_env.py`
-- [ ] 编写 `tasks/04_cache_policy/solution/solve.sh`
-- [ ] 编写 `tasks/04_cache_policy/README.md`
+- [x] 编写 `tasks/04_cache_policy/environment/env.py`（含 4 个缺陷）
+- [x] 编写 `tasks/04_cache_policy/solution/fixed_env.py`
+- [x] 编写 `tasks/04_cache_policy/solution/train.py`
+- [x] 编写 `tasks/04_cache_policy/solution/tests/test_env.py`
+- [x] 编写 `tasks/04_cache_policy/solution/solve.sh`
+- [x] 编写 `tasks/04_cache_policy/README.md`
 
 ### 缺陷清单
 | 缺陷 | 定位 | 修复方式 |
